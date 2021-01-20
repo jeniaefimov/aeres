@@ -1,0 +1,11 @@
+name: ESlint
+on: [pull_request]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Install modules
+      run: yarn
+    - name: Run ESLint
+      run: yarn run eslint ./app/javascript --ext .js,.jsx
