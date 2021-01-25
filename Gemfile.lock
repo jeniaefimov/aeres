@@ -152,6 +152,8 @@ GEM
       actionpack (>= 4.0)
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
+    strong_migrations (0.7.6)
+      activerecord (>= 5)
     thor (1.1.0)
     tzinfo (2.0.4)
       concurrent-ruby (~> 1.0)
@@ -172,6 +174,7 @@ DEPENDENCIES
   rubocop (~> 1.8)
   rubocop-rails (~> 2.8, >= 2.8.1)
   rubocop-rspec (~> 2.1)
+  strong_migrations (~> 0.7.6)
 
 RUBY VERSION
    ruby 3.0.0p0
