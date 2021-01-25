@@ -12,4 +12,7 @@ group :development, :test do
 end
 
 group :development do
+  gem 'rubocop', '~> 1.8', require: false
+  gem 'rubocop-rails', '~> 2.8', '>= 2.8.1'
+  gem 'rubocop-rspec', '~> 2.1'
 end
