@@ -10,10 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_18_201755) do
+ActiveRecord::Schema.define(version: 2021_01_27_172056) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "lab_results", force: :cascade do |t|
+    t.bigint "patient_id", null: false
+    t.string "test_type", null: false
+    t.string "file", null: false
+    t.jsonb "results"
+    t.datetime "next_at"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["patient_id"], name: "index_lab_results_on_patient_id"
+    t.index ["test_type"], name: "index_lab_results_on_test_type"
+  end
 
   create_table "patients", force: :cascade do |t|
     t.bigint "user_id", null: false
@@ -35,5 +47,6 @@ ActiveRecord::Schema.define(version: 2021_01_18_201755) do
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 
+  add_foreign_key "lab_results", "patients"
   add_foreign_key "patients", "users"
 end
