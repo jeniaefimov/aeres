@@ -3,5 +3,8 @@
 class User < ApplicationRecord
   has_one :patient
 
-  validates :email, presence: true, uniqueness: true
+  validates :email, format: { with: URI::MailTo::EMAIL_REGEXP, message: "Email has invalid format" },
+            presence: true,
+            uniqueness: { case_sensitive: false },
+            length: { minimum: 4, maximum: 254 }
 end
