@@ -92,6 +92,8 @@ Naming/BlockParameterName:
   MinNameLength: 3
   AllowNamesEndingInNumbers: false
   AllowedNames: ["id", "to"]
+  Exclude:
+    - "db/migrate/**/*"
 
 Naming/MemoizedInstanceVariableName:
   Enabled: false
