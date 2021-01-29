@@ -1,10 +1,10 @@
 # frozen_string_literal: true
 
 class User < ApplicationRecord
-  has_one :patient
+  has_one :patient, dependent: :destroy
 
   validates :email, format: { with: URI::MailTo::EMAIL_REGEXP, message: "Email has invalid format" },
-            presence: true,
-            uniqueness: { case_sensitive: false },
-            length: { minimum: 4, maximum: 254 }
+                    presence: true,
+                    uniqueness: { case_sensitive: false },
+                    length: { minimum: 4, maximum: 254 }
 end
