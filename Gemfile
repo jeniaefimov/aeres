@@ -7,6 +7,7 @@ gem "rails", "~> 6.1.1"
 gem "pg", "~> 1.1"
 gem "puma", "~> 5.0"
 
+gem "graphql", "~> 1.12.3"
 gem "strong_migrations", "~> 0.7.6"
 
 group :development, :test do
