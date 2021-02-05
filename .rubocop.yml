@@ -53,6 +53,11 @@ Style/SymbolArray:
 Style/FormatString:
   Enabled: false
 
+Style/RescueStandardError:
+  Enabled: true
+  Exclude:
+    - "app/controllers/graphql_controller.rb"
+
 Style/AccessModifierDeclarations:
   Enabled: false
 
@@ -120,6 +125,11 @@ Metrics/AbcSize:
 Metrics/BlockNesting:
   Enabled: true
   Max: 4
+
+Metrics/MethodLength:
+  Enabled: true
+  Exclude:
+    - "app/controllers/graphql_controller.rb"
 
 Metrics/ClassLength:
   Enabled: true
