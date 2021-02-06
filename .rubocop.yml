@@ -8,6 +8,11 @@ require:
 AllCops:
   NewCops: enable
 
+Rails/ApplicationRecord:
+  Enabled: true
+  Exclude:
+    - "db/migrate/**/*"
+
 RSpec/LetSetup:
   Enabled: true
 

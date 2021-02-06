@@ -3,7 +3,7 @@ class AddClearanceToUsers < ActiveRecord::Migration[6.1]
 
   def up
     safety_assured do
-      change_table :users do |t|
+      change_table :users, bulk: true do |t|
         t.string :encrypted_password, limit: 128
         t.string :confirmation_token, limit: 128
         t.string :remember_token, limit: 128
