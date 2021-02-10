@@ -73,6 +73,10 @@ GEM
       railties (>= 3.1)
     concurrent-ruby (1.1.8)
     crass (1.0.6)
+    dotenv (2.7.6)
+    dotenv-rails (2.7.6)
+      dotenv (= 2.7.6)
+      railties (>= 3.2)
     email_validator (1.6.0)
       activemodel
     erubi (1.10.0)
@@ -179,8 +183,9 @@ PLATFORMS
 
 DEPENDENCIES
   byebug
-  graphql (~> 1.12.3)
   clearance (~> 1.12)
+  dotenv-rails (~> 2.7, >= 2.7.6)
+  graphql (~> 1.12.3)
   pg (~> 1.1)
   puma (~> 5.0)
   rails (~> 6.1.1)
