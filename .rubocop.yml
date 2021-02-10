@@ -8,6 +8,11 @@ require:
 AllCops:
   NewCops: enable
 
+Rails/CreateTableWithTimestamps:
+  Enabled: true
+  Exclude:
+    - "db/migrate/20210209184833_create_active_storage_tables.active_storage.rb"
+
 Rails/ApplicationRecord:
   Enabled: true
   Exclude:
@@ -24,6 +29,11 @@ RSpec/NamedSubject:
 
 RSpec/MultipleExpectations:
   Max: 5
+
+Rails/NotNullColumn:
+  Enabled: true
+  Exclude:
+    - "db/migrate/20210209192240_remove_file_field_from_lab_results.rb"
 
 Rails/BelongsTo:
   Enabled: true
@@ -135,6 +145,8 @@ Layout/MultilineMethodCallIndentation:
 Metrics/AbcSize:
   Enabled: true
   Max: 20
+  Exclude:
+    - "db/migrate/**/*"
 
 Metrics/BlockNesting:
   Enabled: true
@@ -148,6 +160,7 @@ Metrics/MethodLength:
   Enabled: true
   Exclude:
     - "app/controllers/graphql_controller.rb"
+    - "db/migrate/**/*"
 
 Metrics/ClassLength:
   Enabled: true
