@@ -17,7 +17,10 @@ gem "strong_migrations", "~> 0.7.6"
 gem "clearance", "~> 1.12"
 
 group :development, :test do
-  gem "byebug"
+  gem "pry", "~> 0.14.0"
+
+  gem "rspec-rails", "~> 4.0.2"
+  gem "factory_bot_rails", "~> 6.1.0"
 end
 
 group :development do

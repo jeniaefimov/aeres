@@ -8,5 +8,6 @@ class Patient < ApplicationRecord
   validates :gender, inclusion: Users::Constants::GENDER
 
   validates :doctor_email, format: { with: URI::MailTo::EMAIL_REGEXP, message: "Email has invalid format" },
-                           length: { minimum: 4, maximum: 254 }
+                           length: { minimum: 4, maximum: 254 },
+                           allow_nil: true
 end
