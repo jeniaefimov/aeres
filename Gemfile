@@ -12,6 +12,7 @@ gem "pg", "~> 1.1"
 gem "puma", "~> 5.0"
 
 gem "graphql", "~> 1.12.3"
+gem "graphql-batch", "~> 0.4.3"
 gem "strong_migrations", "~> 0.7.6"
 
 gem "clearance", "~> 1.12"
