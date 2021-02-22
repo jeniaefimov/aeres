@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class UpdateUserRememberTokens < ActiveRecord::Migration[6.1]
   User = Class.new(ActiveRecord::Base)
   def change
