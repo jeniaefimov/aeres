@@ -3,22 +3,18 @@
 module Mutations
   class AttachLabResultFile < GraphQL::Schema::Mutation
     description <<~DESC
-      Attach file to LabResult
+      Attach file to patient by creating LabResult record
       (by attaching a blob via signed ID)
     DESC
 
-    argument :blob_id, String,
-             "Signed blob ID generated via `createDirectUpload` mutation",
-             required: true
-    argument :lab_result_id, Int, required: true
+    argument :input, ::Types::InputObjects::AttachLabResultArguments, required: true
 
-    field :lab_result, Types::LabResultType, null: true
+    field :lab_result, Types::LabResultType, null: false
 
-    def resolve(blob_id:, lab_result_id:)
-      # Active Storage retrieves the blob data from DB
-      # using a signed_id and associates the blob with the attachment (avatar)
-      lab_result = current_user.patient.lab_results.find(lab_result_id)
-      lab_result.file.attach(blob_id)
+    def resolve(input:)
+      patient = Patient.find(input.patient_id)
+      lab_result = patient.lab_results.create!(test_type: input.test_type, next_at: input.next_at)
+      lab_result.file.attach(input.blob_id)
       { lab_result: lab_result }
     end
   end

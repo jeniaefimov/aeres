@@ -19,7 +19,6 @@ module Types
       ).load(object).then do |file|
         next if file.nil?
 
-        file = file.variant(variant) if variant
         Rails.application.routes.url_helpers.url_for(file)
       end
     end
