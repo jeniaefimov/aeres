@@ -82,6 +82,12 @@ Style/MultilineTernaryOperator:
 Style/StringLiterals:
   EnforcedStyle: double_quotes
 
+Style/FrozenStringLiteralComment:
+  Enabled: true
+
+Style/EmptyLineAfterMagicComment:
+  Enabled: true
+
 Style/PercentLiteralDelimiters:
   PreferredDelimiters:
     'default': '()'
