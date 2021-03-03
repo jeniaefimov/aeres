@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Mutations
   class CreatePatient < Mutations::BaseMutation
     argument :arguments, Types::InputObjects::PatientArguments, required: true

@@ -1,9 +1,12 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 describe Mutations::UpdatePatient, type: :graphql do
   subject { execute_graphql(mutation) }
 
-  let(:patient) { create(:patient, first_name: first_name) }
+  let(:user)    { create(:user) }
+  let(:patient) { create(:patient, user: user, first_name: first_name) }
   let(:first_name) { "Sam" }
 
   context "when attributes are valid" do

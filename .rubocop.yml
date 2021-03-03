@@ -23,7 +23,7 @@ RSpec/NamedSubject:
   Enabled: false
 
 RSpec/MultipleExpectations:
-  Max: 3
+  Max: 5
 
 Rails/BelongsTo:
   Enabled: true

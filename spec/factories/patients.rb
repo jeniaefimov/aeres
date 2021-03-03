@@ -1,6 +1,7 @@
+# frozen_string_literal: true
+
 FactoryBot.define do
   factory :patient, class: "Patient" do
-    user
     first_name { "Agent" }
     last_name { "Smith" }
     date_of_birth { 25.years.ago.iso8601 }

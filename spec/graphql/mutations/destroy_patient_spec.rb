@@ -1,9 +1,12 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 describe Mutations::DestroyPatient, type: :graphql do
   subject { execute_graphql(mutation) }
 
-  let(:patient) { create(:patient) }
+  let(:user) { create(:user) }
+  let(:patient) { create(:patient, user: user) }
   let(:mutation) do
     <<~GQL
       mutation {

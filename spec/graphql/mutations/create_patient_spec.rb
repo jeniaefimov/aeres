@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 describe Mutations::CreatePatient, type: :graphql do
@@ -28,11 +30,10 @@ describe Mutations::CreatePatient, type: :graphql do
     end
 
     it "return patient" do
+      expect { subject }.to change(Patient, :count).from(0).to(1)
       expect(subject["data"]["createPatient"]["patient"]["userId"]).to eq(user.id)
       expect(subject["data"]["createPatient"]["errors"]).to be_empty
     end
-
-    it { expect { subject }.to change(Patient, :count).from(0).to(1) }
   end
 
   context "when attributes are invalid" do
