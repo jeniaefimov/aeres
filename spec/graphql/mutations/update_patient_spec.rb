@@ -27,7 +27,7 @@ describe Mutations::UpdatePatient, type: :graphql do
       GQL
     end
 
-    it "return patient" do
+    it "returns patient" do
       expect(subject["data"]["updatePatient"]["patient"]["firstName"]).to eq(updated_first_name)
       expect(subject["data"]["updatePatient"]["errors"]).to be_empty
     end

@@ -23,9 +23,8 @@ describe Mutations::DestroyPatient, type: :graphql do
     patient
   end
 
-  it "return patient id" do
+  it "returns patient id" do
+    expect { subject }.to change(Patient, :count).from(1).to(0)
     expect(subject["data"]["destroyPatient"]["id"]).to eq(patient.id.to_s)
   end
-
-  it { expect { subject }.to change(Patient, :count).from(1).to(0) }
 end
