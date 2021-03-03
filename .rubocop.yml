@@ -98,9 +98,6 @@ Style/StringLiterals:
 Style/FrozenStringLiteralComment:
   Enabled: true
 
-Style/EmptyLineAfterMagicComment:
-  Enabled: true
-
 Style/PercentLiteralDelimiters:
   PreferredDelimiters:
     'default': '()'
