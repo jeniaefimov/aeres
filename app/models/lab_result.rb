@@ -3,5 +3,7 @@
 class LabResult < ApplicationRecord
   belongs_to :patient
 
-  validates :test_type, :file, presence: true
+  has_one_attached :file
+
+  validates :test_type, presence: true
 end
