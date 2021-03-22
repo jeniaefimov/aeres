@@ -10,8 +10,16 @@ module Types
       argument :id, ID, required: true
     end
 
+    field :lab_result, Types::LabResultType, null: true do
+      argument :id, ID, required: true
+    end
+
     def patient(id:)
       Patient.find_by(id: id)
+    end
+
+    def lab_result(id:)
+      LabResult.find_by(id: id)
     end
   end
 end

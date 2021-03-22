@@ -13,10 +13,7 @@ module Types
     field :file_url, String, null: true
 
     def file_url
-      AssociationLoader.for(
-        object.class,
-        file_attachment: :blob
-      ).load(object).then do |file|
+      ::AssociationLoader.for(object.class, file_attachment: :blob).load(object).then do |file|
         next if file.nil?
 
         Rails.application.routes.url_helpers.url_for(file)

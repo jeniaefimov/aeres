@@ -158,6 +158,7 @@ Metrics/MethodLength:
   Exclude:
     - "app/controllers/graphql_controller.rb"
     - "db/migrate/**/*"
+    - "app/graphql/association_loader.rb"
 
 Metrics/ClassLength:
   Enabled: true
@@ -175,4 +176,10 @@ Lint/SendWithMixinArgument:
 
 Lint/Debugger:
   Enabled: true
+
+Lint/MissingSuper:
+  Enabled: true
+  Exclude:
+    - "app/graphql/association_loader.rb"
+
 
