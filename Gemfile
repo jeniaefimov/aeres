@@ -14,7 +14,7 @@ gem "puma", "~> 5.0"
 gem "graphql", "~> 1.12.3"
 gem "strong_migrations", "~> 0.7.6"
 
-gem "clearance", "~> 1.12"
+gem "clearance", "~> 2.5"
 
 group :development, :test do
   gem "pry", "~> 0.14.0"
